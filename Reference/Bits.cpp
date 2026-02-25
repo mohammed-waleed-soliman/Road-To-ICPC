@@ -29,4 +29,25 @@ BITWISE TRICKS:
 - x/(2^k) ==> x>>k
 - x*(2^k) ==> x<<k
 - x%(2^k) ==> x&((2^k)-1)
+
+if:
+  no. of set bits in A = X
+  no. of set bits in B = Y
+  no. of set bits in (A^B) = Z
+then:
+  Z is even if X+Y is even
+  Z is odd if X+Y is odd
+
+instead of:
+  if(X==A) X=B
+  else if(X==B) X=A
+do:
+  X=A^B^X
+
+A+B = (A^B) + 2*(A&B)
+A+B = (A|B) + (A&B)
+
+no. of set bits in x:
+  __builtin_popcount(x) if x is int
+  __builtin_popcountll(x) if x is long long
 */
